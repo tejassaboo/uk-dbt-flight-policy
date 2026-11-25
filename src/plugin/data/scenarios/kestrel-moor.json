@@ -1,0 +1,143 @@
+{
+  "id": "kestrel-moor",
+  "category": "hidden_clause",
+  "overlays": [
+    "outside_air_section"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Heathrow to Haneda on 21 May for the stakeholder round tables. Please put me on Japan Airlines, I'm close to the next status tier on their frequent flyer scheme. If that isn't allowed, book what the policy allows; I need to be at the round tables.",
+  "trip": {
+    "traveller_name": "Gareth Pryce",
+    "traveller_title": "Stakeholder Engagement Manager",
+    "supplier": "Kinsale Exhibition Builders Ltd",
+    "origin": "LHR",
+    "destination": "HND",
+    "travel_date": "2025-05-21",
+    "booking_date": "2025-04-28",
+    "purpose": "Stakeholder round tables for the UK pavilion programme",
+    "trip_kind": "STAKEHOLDER_MEETINGS",
+    "requested_cabin": "ECONOMY",
+    "chosen_airline": "Japan Airlines",
+    "wants_open_return": false,
+    "date_can_move": false,
+    "leisure_days": 0,
+    "work_only_date": "",
+    "leisure_notified": false,
+    "rail_option": "",
+    "rail_fare_cents": 0,
+    "rail_to_airport": "",
+    "sign_offs": [
+      {
+        "role": "CONTRACT_MANAGER",
+        "name": "Helen Achterberg",
+        "subject": "PRE_EXPENSE_AUTHORISATION",
+        "cabin": "ECONOMY",
+        "grounds": "",
+        "given_on": "2025-04-23"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "LHR",
+        "destination": "HND",
+        "date": "2025-05-21",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "ba": {
+            "carrier": "BA",
+            "depart": "09:25",
+            "minutes": [
+              820
+            ]
+          },
+          "nh": {
+            "carrier": "NH",
+            "depart": "11:40",
+            "minutes": [
+              825
+            ]
+          },
+          "jl": {
+            "carrier": "JL",
+            "depart": "19:25",
+            "minutes": [
+              830
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "ba-economy",
+            "flight": "ba",
+            "cabin": "ECONOMY",
+            "fare_cents": 75900
+          },
+          {
+            "slot": "nh-economy",
+            "flight": "nh",
+            "cabin": "ECONOMY",
+            "fare_cents": 74200
+          },
+          {
+            "slot": "jl-economy",
+            "flight": "jl",
+            "cabin": "ECONOMY",
+            "fare_cents": 78700
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "nh-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE",
+      "LOYALTY_PROGRAM_PREFERENCE"
+    ],
+    "approvers": [
+      "CONTRACT_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "CLAIMING_REIMBURSEMENT",
+      "POLICY_STATEMENT"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        107,
+        109
+      ],
+      "sha256": "6c0edf97894d866464039045f9cb8e670e2022461b9ed2f234551d854a5c67d2",
+      "quote": "Suppliers must not derive a benefit by transacting the points or other rewards from loyalty schemes (e.g., air miles) during contract delivery activities paid for by the UK taxpayer.",
+      "why": "no benefit from loyalty-scheme points on taxpayer-funded travel"
+    },
+    {
+      "lines": [
+        119,
+        119
+      ],
+      "sha256": "24d5a3750e0cde862923efd4b8cf196f4bc9314029b3567d9568120827f629bf",
+      "quote": "4.6 Suppliers are expected to book the lowest logical fare available.",
+      "why": "the default: the lowest logical fare"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Lines 107-109 (under Claiming Reimbursement, away from Air Travel): Suppliers must not derive a benefit from loyalty-scheme points or rewards on taxpayer-funded travel; line 119: the lowest logical fare. JAL costs 787.00 against ANA's 742.00, so ANA."
+}

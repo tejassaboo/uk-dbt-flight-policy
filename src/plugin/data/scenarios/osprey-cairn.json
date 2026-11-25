@@ -1,0 +1,173 @@
+{
+  "id": "osprey-cairn",
+  "category": "flag",
+  "overlays": [
+    "approval_required",
+    "dearer_option"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [
+    "damson-ridge",
+    "elder-sound"
+  ],
+  "ambiguity_note": "none: the Contract Manager's prior agreement to business is required and missing; the text is clear",
+  "request": "Heathrow to Haneda on 1 October for the closing-fortnight stakeholder programme. I'd like business class for this one, please; my form went in for economy. I'd rather wait for business than fly economy on this one.",
+  "trip": {
+    "traveller_name": "Bethan Hughes",
+    "traveller_title": "Programme Director",
+    "supplier": "Kinsale Exhibition Builders Ltd",
+    "origin": "LHR",
+    "destination": "HND",
+    "travel_date": "2025-10-01",
+    "booking_date": "2025-09-08",
+    "purpose": "Closing-fortnight stakeholder programme at the Expo, Osaka",
+    "trip_kind": "STAKEHOLDER_MEETINGS",
+    "requested_cabin": "BUSINESS",
+    "chosen_airline": "",
+    "wants_open_return": false,
+    "date_can_move": false,
+    "leisure_days": 0,
+    "work_only_date": "",
+    "leisure_notified": false,
+    "rail_option": "",
+    "rail_fare_cents": 0,
+    "rail_to_airport": "",
+    "sign_offs": [
+      {
+        "role": "CONTRACT_MANAGER",
+        "name": "Helen Achterberg",
+        "subject": "PRE_EXPENSE_AUTHORISATION",
+        "cabin": "ECONOMY",
+        "grounds": "",
+        "given_on": "2025-09-03"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "LHR",
+        "destination": "HND",
+        "date": "2025-10-01",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "ba": {
+            "carrier": "BA",
+            "depart": "09:25",
+            "minutes": [
+              820
+            ]
+          },
+          "nh": {
+            "carrier": "NH",
+            "depart": "11:40",
+            "minutes": [
+              825
+            ]
+          },
+          "jl": {
+            "carrier": "JL",
+            "depart": "19:25",
+            "minutes": [
+              830
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "ba-economy",
+            "flight": "ba",
+            "cabin": "ECONOMY",
+            "fare_cents": 75600
+          },
+          {
+            "slot": "ba-business",
+            "flight": "ba",
+            "cabin": "BUSINESS",
+            "fare_cents": 401000
+          },
+          {
+            "slot": "nh-economy",
+            "flight": "nh",
+            "cabin": "ECONOMY",
+            "fare_cents": 76900
+          },
+          {
+            "slot": "nh-business",
+            "flight": "nh",
+            "cabin": "BUSINESS",
+            "fare_cents": 408800
+          },
+          {
+            "slot": "jl-economy",
+            "flight": "jl",
+            "cabin": "ECONOMY",
+            "fare_cents": 74300
+          },
+          {
+            "slot": "jl-business",
+            "flight": "jl",
+            "cabin": "BUSINESS",
+            "fare_cents": 396500
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "FLAG_FOR_APPROVAL",
+    "offer_slots": [
+      "jl-business"
+    ],
+    "cabins": [
+      "BUSINESS"
+    ],
+    "reason_codes": [
+      "APPROVAL_REQUIRED",
+      "INTERNATIONAL_LONG_FLIGHT"
+    ],
+    "approvers": [
+      "CONTRACT_MANAGER"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "EXPENSE_PRE_APPROVAL",
+      "POLICY_STATEMENT"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        131,
+        135
+      ],
+      "sha256": "061214c53f3583f0bad36420d5c0704175ced19161a343863167e46eaca068b1",
+      "quote": "4.9 The following limits on the class of travel permitted are as follows Flying Time (per flight) Class of Travel Up to 5 hours All journeys at public expense: Economy Over 5 hours All journeys at public expense: Economy (but see below*) Over 10 hours All journeys at public expense: Business (subject to prior agreement with DBT Contract Manager)",
+      "why": "the class of travel per flight: economy up to and over 5 hours, business over 10 hours with the Contract Manager's prior agreement"
+    },
+    {
+      "lines": [
+        58,
+        58
+      ],
+      "sha256": "0587dccc90ae23df85bbae6253ea8c4665fd40c551a67be8bf3d00617e62cb33",
+      "quote": "1.12 Travel must not be reserved or purchased without the DBT Contract Manager's pre-approval in writing as this will be required for all reimbursements.",
+      "why": "no travel reserved or purchased without the Contract Manager's written pre-approval"
+    },
+    {
+      "lines": [
+        339,
+        345
+      ],
+      "sha256": "d28d01f4c276d341f125e47982da298facf640b3e20c6cc5eee5d90b269c7589",
+      "quote": "Mode of Travel Class of Travel Business Justification for Upgrade",
+      "why": "the pre-expense authorisation form records the class of travel and the business justification for an upgrade"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "The nonstops are over 10 hours, so business may be used 'subject to prior agreement with DBT Contract Manager' (line 135). The signed form names economy, and travel may not be purchased without the Contract Manager's written pre-approval (line 58). The traveller would rather wait for business: hold the lowest business fare (JAL, 3,965.00) for the Contract Manager. Approval required, not 'no compliant offer'."
+}

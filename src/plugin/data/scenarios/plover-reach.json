@@ -1,0 +1,185 @@
+{
+  "id": "plover-reach",
+  "category": "flag",
+  "overlays": [
+    "multi_leg",
+    "unclear_phrase"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [
+    "linnet-brook",
+    "bramble-coil"
+  ],
+  "ambiguity_note": {
+    "phrase": "Over 5 hours All journeys at public expense: Economy (but see below*)",
+    "readings": [
+      "the asterisk marks only the 'Over 5 hours' row, so the Hong Kong to Haneda flight of 5 hours or less stays in economy and a premium economy ticket on it is not allowed: book the Cathay economy fare",
+      "the footnote lets the Director allow the next higher class for the journey, short flights included (its grounds name same-day visits): book the Cathay premium economy fare"
+    ]
+  },
+  "request": "Heathrow to Haneda on 25 June; via Hong Kong is fine. My director has approved premium economy because I go straight into the technical rehearsal when I land. If premium economy isn't allowed, book economy.",
+  "trip": {
+    "traveller_name": "Kenji Hartley",
+    "traveller_title": "Technical Rehearsal Lead",
+    "supplier": "Kinsale Exhibition Builders Ltd",
+    "origin": "LHR",
+    "destination": "HND",
+    "travel_date": "2025-06-25",
+    "booking_date": "2025-06-02",
+    "purpose": "Technical rehearsal at the UK pavilion, Osaka, on arrival (onward by rail from Tokyo)",
+    "trip_kind": "EXPO_SITE_WORK",
+    "requested_cabin": "PREMIUM_ECONOMY",
+    "chosen_airline": "",
+    "wants_open_return": false,
+    "date_can_move": false,
+    "leisure_days": 0,
+    "work_only_date": "",
+    "leisure_notified": false,
+    "rail_option": "",
+    "rail_fare_cents": 0,
+    "rail_to_airport": "",
+    "sign_offs": [
+      {
+        "role": "CONTRACT_MANAGER",
+        "name": "Helen Achterberg",
+        "subject": "PRE_EXPENSE_AUTHORISATION",
+        "cabin": "ECONOMY",
+        "grounds": "",
+        "given_on": "2025-05-28"
+      },
+      {
+        "role": "DIRECTOR",
+        "name": "Rupert Osei",
+        "subject": "HIGHER_CABIN",
+        "cabin": "PREMIUM_ECONOMY",
+        "grounds": "Required to work immediately on arrival at the technical rehearsal",
+        "given_on": "2025-05-29"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "LHR",
+        "destination": "HND",
+        "date": "2025-06-25",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "hongkong": {
+            "carrier": "CX",
+            "via": [
+              "HKG"
+            ],
+            "depart": "11:10",
+            "minutes": [
+              765,
+              240
+            ],
+            "layovers": [
+              110
+            ]
+          },
+          "hongkong-late": {
+            "carrier": "CX",
+            "via": [
+              "HKG"
+            ],
+            "depart": "18:25",
+            "minutes": [
+              770,
+              245
+            ],
+            "layovers": [
+              95
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "hongkong-economy",
+            "flight": "hongkong",
+            "cabin": "ECONOMY",
+            "fare_cents": 66200
+          },
+          {
+            "slot": "hongkong-premium",
+            "flight": "hongkong",
+            "cabin": "PREMIUM_ECONOMY",
+            "fare_cents": 104800
+          },
+          {
+            "slot": "hongkong-late-economy",
+            "flight": "hongkong-late",
+            "cabin": "ECONOMY",
+            "fare_cents": 67900
+          },
+          {
+            "slot": "hongkong-late-premium",
+            "flight": "hongkong-late",
+            "cabin": "PREMIUM_ECONOMY",
+            "fare_cents": 108300
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "FLAG_FOR_APPROVAL",
+    "offer_slots": [
+      "hongkong-economy",
+      "hongkong-premium"
+    ],
+    "cabins": [
+      "ECONOMY",
+      "PREMIUM_ECONOMY"
+    ],
+    "reason_codes": [
+      "APPROVAL_REQUIRED",
+      "UNCLEAR_POLICY_TEXT"
+    ],
+    "approvers": [
+      "CONTRACT_MANAGER",
+      "DIRECTOR",
+      "NOT_NAMED"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "POLICY_STATEMENT"
+    ],
+    "unclear_phrase": "Over 5 hours All journeys at public expense: Economy (but see below*)"
+  },
+  "must_keep": [
+    {
+      "lines": [
+        131,
+        135
+      ],
+      "sha256": "061214c53f3583f0bad36420d5c0704175ced19161a343863167e46eaca068b1",
+      "quote": "4.9 The following limits on the class of travel permitted are as follows Flying Time (per flight) Class of Travel Up to 5 hours All journeys at public expense: Economy Over 5 hours All journeys at public expense: Economy (but see below*) Over 10 hours All journeys at public expense: Business (subject to prior agreement with DBT Contract Manager)",
+      "why": "the class of travel per flight: economy up to and over 5 hours, business over 10 hours with the Contract Manager's prior agreement"
+    },
+    {
+      "lines": [
+        144,
+        144
+      ],
+      "sha256": "367d47da4439572fa99ef63c481f97cca86c924b92229fac7b7a0e980bd8f29a",
+      "quote": "• if the interim contractor will be required to work immediately on arrival.",
+      "why": "a listed ground: work immediately on arrival"
+    },
+    {
+      "lines": [
+        140,
+        141
+      ],
+      "sha256": "9d5364b7c65a49d51660977a7f07c7884341aa90760831d63613fd923adcdecc",
+      "quote": "• for short duty visits out and back in a working day - not applicable where there has been an overnight stay.",
+      "why": "a listed ground that implies short flights: out and back in a working day"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Each itinerary has a flight over 10 hours to Hong Kong (765 or 770 minutes) and one of 5 hours or less on to Haneda (240 or 245). The class is set per flight (line 132). The Director's note allows the next higher class for work on arrival (line 144), but only the 'Over 5 hours' row carries '(but see below*)' (line 134); the 'Up to 5 hours' row is plain economy (line 133). Yet the footnote's own grounds include 'short duty visits out and back in a working day' (lines 140-141), which are short flights, so it may reach them too. The offer sells premium economy on both flights. Hold the premium economy fare, or the economy fare of the stricter reading."
+}

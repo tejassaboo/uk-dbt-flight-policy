@@ -1,0 +1,220 @@
+{
+  "id": "iris-tarn",
+  "category": "multi_rule",
+  "overlays": [
+    "multi_leg"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm based in Edinburgh. I'd like to fly Edinburgh to Tokyo Haneda on 23 April, changing at Heathrow. If the policy wants me on the train down to London instead, book the flight from Heathrow.",
+  "trip": {
+    "traveller_name": "Euan MacLeod",
+    "traveller_title": "Lighting Designer",
+    "supplier": "Kinsale Exhibition Builders Ltd",
+    "origin": "EDI",
+    "destination": "HND",
+    "travel_date": "2025-04-23",
+    "booking_date": "2025-03-31",
+    "purpose": "Pavilion lighting installation at the Expo site, Osaka (onward by rail from Tokyo)",
+    "trip_kind": "EXPO_SITE_WORK",
+    "requested_cabin": "ECONOMY",
+    "chosen_airline": "",
+    "wants_open_return": false,
+    "date_can_move": false,
+    "leisure_days": 0,
+    "work_only_date": "",
+    "leisure_notified": false,
+    "rail_option": "Edinburgh to London King's Cross by train on the morning of 23 April, then the Heathrow Express; it reaches Heathrow by 12:45, before every afternoon and evening departure from there",
+    "rail_fare_cents": 9850,
+    "rail_to_airport": "LHR",
+    "sign_offs": [
+      {
+        "role": "CONTRACT_MANAGER",
+        "name": "Helen Achterberg",
+        "subject": "PRE_EXPENSE_AUTHORISATION",
+        "cabin": "ECONOMY",
+        "grounds": "",
+        "given_on": "2025-03-26"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "edinburgh",
+        "origin": "EDI",
+        "destination": "HND",
+        "date": "2025-04-23",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "via-london": {
+            "carrier": "BA",
+            "via": [
+              "LHR"
+            ],
+            "depart": "09:40",
+            "minutes": [
+              85,
+              825
+            ],
+            "layovers": [
+              145
+            ]
+          },
+          "via-london-late": {
+            "carrier": "BA",
+            "via": [
+              "LHR"
+            ],
+            "depart": "15:30",
+            "minutes": [
+              85,
+              830
+            ],
+            "layovers": [
+              130
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "edi-early-economy",
+            "flight": "via-london",
+            "cabin": "ECONOMY",
+            "fare_cents": 98400
+          },
+          {
+            "slot": "edi-late-economy",
+            "flight": "via-london-late",
+            "cabin": "ECONOMY",
+            "fare_cents": 101200
+          }
+        ]
+      },
+      {
+        "name": "heathrow",
+        "origin": "LHR",
+        "destination": "HND",
+        "date": "2025-04-23",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "ba": {
+            "carrier": "BA",
+            "depart": "13:30",
+            "minutes": [
+              825
+            ]
+          },
+          "jl": {
+            "carrier": "JL",
+            "depart": "15:20",
+            "minutes": [
+              830
+            ]
+          },
+          "ba-late": {
+            "carrier": "BA",
+            "depart": "19:20",
+            "minutes": [
+              830
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "lhr-ba-economy",
+            "flight": "ba",
+            "cabin": "ECONOMY",
+            "fare_cents": 74100
+          },
+          {
+            "slot": "lhr-jl-economy",
+            "flight": "jl",
+            "cabin": "ECONOMY",
+            "fare_cents": 72900
+          },
+          {
+            "slot": "lhr-ba-late-economy",
+            "flight": "ba-late",
+            "cabin": "ECONOMY",
+            "fare_cents": 76300
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "lhr-jl-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "COST_SAVINGS",
+      "RAIL_PREFERRED"
+    ],
+    "approvers": [
+      "CONTRACT_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "POLICY_STATEMENT"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        147,
+        149
+      ],
+      "sha256": "3ca5dc61dc29ab4cb5822578630415d7f5017278d48e66dda7f6e1ef1867890a",
+      "quote": "Air travel should not normally be used within the UK, although there is an exception for travel to/from Scotland and Northern Ireland. Air travel in the UK must be by economy class.",
+      "why": "no air within the UK except to/from Scotland and Northern Ireland, in economy"
+    },
+    {
+      "lines": [
+        151,
+        152
+      ],
+      "sha256": "78ac439f6f21b02e1f47083974186f5ad9c9ec5df4c98bdf00d1c24e25f52dc8",
+      "quote": "Domestic flights should only be taken when they are more economical than rail.",
+      "why": "a domestic flight only when more economical than rail"
+    },
+    {
+      "lines": [
+        119,
+        119
+      ],
+      "sha256": "24d5a3750e0cde862923efd4b8cf196f4bc9314029b3567d9568120827f629bf",
+      "quote": "4.6 Suppliers are expected to book the lowest logical fare available.",
+      "why": "the default: the lowest logical fare"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        154,
+        155
+      ],
+      "quote": "For rail travel the Supplier should travel standard class",
+      "why": "the train's class, not the flight's"
+    },
+    {
+      "lines": [
+        148,
+        149
+      ],
+      "quote": "Air travel in the UK must be by economy class.",
+      "why": "the UK cabin rule; the flight booked here is the international one"
+    }
+  ],
+  "design_notes": "Air from Scotland is the exception to no air within the UK (lines 147-148), but 'Domestic flights should only be taken when they are more economical than rail' (lines 151-152). The through fare from Edinburgh is 984.00; the train (98.50) plus the lowest Heathrow fare (JAL, 729.00) is 827.50, and even with the same BA flight from Heathrow (741.00) it is 839.50. The flight to London is not more economical than rail, so the traveller goes by train and the ticket is the lowest logical fare from Heathrow."
+}

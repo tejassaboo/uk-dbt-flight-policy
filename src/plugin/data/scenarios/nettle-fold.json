@@ -1,0 +1,151 @@
+{
+  "id": "nettle-fold",
+  "category": "refusal",
+  "overlays": [
+    "personal_travel",
+    "outside_air_section"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I've been out at the Expo since early May and I'm here until the end of June. Could you book me Haneda to Heathrow on Friday 13 June so I can spend the weekend at home? Economy is fine.",
+  "trip": {
+    "traveller_name": "Rhys Abernethy",
+    "traveller_title": "Pavilion Duty Manager",
+    "supplier": "Kinsale Exhibition Builders Ltd",
+    "origin": "HND",
+    "destination": "LHR",
+    "travel_date": "2025-06-13",
+    "booking_date": "2025-05-27",
+    "purpose": "A weekend at home in London in the middle of a posting at the UK pavilion (5 May to 27 June)",
+    "trip_kind": "HOME_VISIT",
+    "requested_cabin": "ECONOMY",
+    "chosen_airline": "",
+    "wants_open_return": false,
+    "date_can_move": false,
+    "leisure_days": 0,
+    "work_only_date": "",
+    "leisure_notified": false,
+    "rail_option": "",
+    "rail_fare_cents": 0,
+    "rail_to_airport": "",
+    "sign_offs": [
+      {
+        "role": "CONTRACT_MANAGER",
+        "name": "Helen Achterberg",
+        "subject": "PRE_EXPENSE_AUTHORISATION",
+        "cabin": "ECONOMY",
+        "grounds": "The posting's flights out on 5 May and home on 27 June",
+        "given_on": "2025-04-22"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "HND",
+        "destination": "LHR",
+        "date": "2025-06-13",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "jl": {
+            "carrier": "JL",
+            "depart": "10:15",
+            "minutes": [
+              885
+            ]
+          },
+          "nh": {
+            "carrier": "NH",
+            "depart": "11:50",
+            "minutes": [
+              880
+            ]
+          },
+          "ba": {
+            "carrier": "BA",
+            "depart": "13:05",
+            "minutes": [
+              890
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "jl-economy",
+            "flight": "jl",
+            "cabin": "ECONOMY",
+            "fare_cents": 66400
+          },
+          {
+            "slot": "nh-economy",
+            "flight": "nh",
+            "cabin": "ECONOMY",
+            "fare_cents": 67900
+          },
+          {
+            "slot": "ba-economy",
+            "flight": "ba",
+            "cabin": "ECONOMY",
+            "fare_cents": 69100
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "REFUSE",
+    "offer_slots": [],
+    "cabins": [
+      "NONE"
+    ],
+    "reason_codes": [
+      "OUTSIDE_POLICY_SCOPE",
+      "PERSONAL_TRAVEL_NOT_COVERED",
+      "WEEKEND_TRAVEL_HOME"
+    ],
+    "approvers": [
+      "CONTRACT_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "NON_REIMBURSABLE",
+      "PURPOSE"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        20,
+        24
+      ],
+      "sha256": "5eed75cb005d87c7bf3a686066a2c6b2878d62e77df6d2accedbc0b2c94f2716",
+      "quote": "1.4 Any official travel that the Supplier may claim for in accordance with this Schedule must not include travel between a Supplier's (or any Subcontractors) home and normal place of work; return journeys home at weekends during a continuous business location; or a journey to a business location where the journey broadly follows the same route as the journey to their normal place of work.",
+      "why": "claimable travel excludes return journeys home at weekends during a continuous business location"
+    },
+    {
+      "lines": [
+        235,
+        236
+      ],
+      "sha256": "9089227243af41a6d108c49d67d9cf82c93dfd392275edcd5ca34541572885a8",
+      "quote": "4.31 Expenses may not be reimbursed unless they are specified in this document. Expenses which fall outside the areas above will not be reimbursed. If the Supplier",
+      "why": "expenses outside the areas specified are not reimbursed"
+    },
+    {
+      "lines": [
+        10,
+        15
+      ],
+      "sha256": "4884da2c8c369670c8612f0b607394ea72ad223dacc459e155d38200cc7c586e",
+      "quote": "Suppliers can only claim for official travel to and from Expo 2025 in Japan and within Japan.",
+      "why": "only official travel to, from and within Japan is claimable"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Lines 20-24: claimable official travel must not include 'return journeys home at weekends during a continuous business location'. The traveller is mid-posting and asks to fly home for the weekend; lines 235-236: what the schedule does not cover is not reimbursed. The form on file covers the posting's own flights, not this one, so NONE or CONTRACT_MANAGER (an unused sign-off on file)."
+}

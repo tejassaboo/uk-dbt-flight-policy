@@ -1,0 +1,166 @@
+{
+  "id": "marram-spit",
+  "category": "distractor",
+  "overlays": [
+    "date_arithmetic"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Short notice, sorry: the Expo team only confirmed my slot on Friday. Heathrow to Haneda on Wednesday 9 July, economy. I'll get a taxi to Heathrow.",
+  "trip": {
+    "traveller_name": "Lena Fischer",
+    "traveller_title": "Exhibit Maintenance Technician",
+    "supplier": "Kinsale Exhibition Builders Ltd",
+    "origin": "LHR",
+    "destination": "HND",
+    "travel_date": "2025-07-09",
+    "booking_date": "2025-07-07",
+    "purpose": "Exhibit maintenance shift at the UK pavilion, Osaka (onward by rail from Tokyo)",
+    "trip_kind": "EXPO_SITE_WORK",
+    "requested_cabin": "ECONOMY",
+    "chosen_airline": "",
+    "wants_open_return": false,
+    "date_can_move": false,
+    "leisure_days": 0,
+    "work_only_date": "",
+    "leisure_notified": false,
+    "rail_option": "",
+    "rail_fare_cents": 0,
+    "rail_to_airport": "",
+    "sign_offs": [
+      {
+        "role": "CONTRACT_MANAGER",
+        "name": "Helen Achterberg",
+        "subject": "PRE_EXPENSE_AUTHORISATION",
+        "cabin": "ECONOMY",
+        "grounds": "",
+        "given_on": "2025-07-04"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "LHR",
+        "destination": "HND",
+        "date": "2025-07-09",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "ba": {
+            "carrier": "BA",
+            "depart": "09:25",
+            "minutes": [
+              820
+            ]
+          },
+          "nh": {
+            "carrier": "NH",
+            "depart": "11:40",
+            "minutes": [
+              825
+            ]
+          },
+          "jl": {
+            "carrier": "JL",
+            "depart": "19:25",
+            "minutes": [
+              830
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "ba-economy",
+            "flight": "ba",
+            "cabin": "ECONOMY",
+            "fare_cents": 81500
+          },
+          {
+            "slot": "nh-economy",
+            "flight": "nh",
+            "cabin": "ECONOMY",
+            "fare_cents": 84200
+          },
+          {
+            "slot": "jl-economy",
+            "flight": "jl",
+            "cabin": "ECONOMY",
+            "fare_cents": 79900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "jl-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "CONTRACT_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "POLICY_STATEMENT"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        119,
+        119
+      ],
+      "sha256": "24d5a3750e0cde862923efd4b8cf196f4bc9314029b3567d9568120827f629bf",
+      "quote": "4.6 Suppliers are expected to book the lowest logical fare available.",
+      "why": "the default: the lowest logical fare"
+    },
+    {
+      "lines": [
+        58,
+        58
+      ],
+      "sha256": "0587dccc90ae23df85bbae6253ea8c4665fd40c551a67be8bf3d00617e62cb33",
+      "quote": "1.12 Travel must not be reserved or purchased without the DBT Contract Manager's pre-approval in writing as this will be required for all reimbursements.",
+      "why": "no travel reserved or purchased without the Contract Manager's written pre-approval"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        110,
+        113
+      ],
+      "quote": "It is expected that Suppliers make early bookings, where possible, booking well in advance to minimise costs",
+      "why": "booking early is 'where possible', not a ban on a late booking"
+    },
+    {
+      "lines": [
+        270,
+        271
+      ],
+      "quote": "allowing 5 days for turnaround by the Contract Manager",
+      "why": "the 5 days are for the form's turnaround, already done here"
+    },
+    {
+      "lines": [
+        171,
+        175
+      ],
+      "quote": "Use of taxis is expected only where there is a clear value for money or business justification",
+      "why": "a taxi rule, not a flight rule"
+    }
+  ],
+  "design_notes": "The booking is two days before the flight. Early booking is expected 'where possible' (lines 110-113), and the 5 days of lines 270-271 are the form's turnaround, already done (signed 4 July). The taxi is a ground-transport matter. The lowest logical fare: JAL at 799.00 (line 119)."
+}

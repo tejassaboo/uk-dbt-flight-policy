@@ -1,0 +1,155 @@
+{
+  "id": "juniper-loft",
+  "category": "multi_rule",
+  "overlays": [],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Please get me an open return from Heathrow to Haneda, flying out on 6 August. I don't know yet when the pavilion work will let me come home. If an open ticket isn't allowed, just book the flight out.",
+  "trip": {
+    "traveller_name": "Hamish Doyle",
+    "traveller_title": "Site Operations Coordinator",
+    "supplier": "Kinsale Exhibition Builders Ltd",
+    "origin": "LHR",
+    "destination": "HND",
+    "travel_date": "2025-08-06",
+    "booking_date": "2025-07-14",
+    "purpose": "Pavilion operations support at the Expo site, Osaka; the end date is not yet set",
+    "trip_kind": "EXPO_SITE_WORK",
+    "requested_cabin": "ECONOMY",
+    "chosen_airline": "",
+    "wants_open_return": true,
+    "date_can_move": false,
+    "leisure_days": 0,
+    "work_only_date": "",
+    "leisure_notified": false,
+    "rail_option": "",
+    "rail_fare_cents": 0,
+    "rail_to_airport": "",
+    "sign_offs": [
+      {
+        "role": "CONTRACT_MANAGER",
+        "name": "Helen Achterberg",
+        "subject": "PRE_EXPENSE_AUTHORISATION",
+        "cabin": "ECONOMY",
+        "grounds": "",
+        "given_on": "2025-07-09"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "LHR",
+        "destination": "HND",
+        "date": "2025-08-06",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "ba": {
+            "carrier": "BA",
+            "depart": "09:25",
+            "minutes": [
+              820
+            ]
+          },
+          "nh": {
+            "carrier": "NH",
+            "depart": "11:40",
+            "minutes": [
+              825
+            ]
+          },
+          "jl": {
+            "carrier": "JL",
+            "depart": "19:25",
+            "minutes": [
+              830
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "ba-economy",
+            "flight": "ba",
+            "cabin": "ECONOMY",
+            "fare_cents": 76800
+          },
+          {
+            "slot": "nh-economy",
+            "flight": "nh",
+            "cabin": "ECONOMY",
+            "fare_cents": 74200
+          },
+          {
+            "slot": "jl-economy",
+            "flight": "jl",
+            "cabin": "ECONOMY",
+            "fare_cents": 75500
+          },
+          {
+            "slot": "jl-flex-economy",
+            "flight": "jl",
+            "cabin": "ECONOMY",
+            "fare_cents": 99800,
+            "refundable": true
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "nh-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "OPEN_TICKET_NOT_ALLOWED"
+    ],
+    "approvers": [
+      "CONTRACT_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "POLICY_STATEMENT"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        146,
+        146
+      ],
+      "sha256": "4fd0f1c0c5d0e51f3bcf8717c49a9e7555e7bb67f051e78e73a39b152a4fe726",
+      "quote": "4.10 All flights must be booked at set dates, no open return tickets may be booked.",
+      "why": "set dates only; no open return tickets"
+    },
+    {
+      "lines": [
+        119,
+        119
+      ],
+      "sha256": "24d5a3750e0cde862923efd4b8cf196f4bc9314029b3567d9568120827f629bf",
+      "quote": "4.6 Suppliers are expected to book the lowest logical fare available.",
+      "why": "the default: the lowest logical fare"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        110,
+        113
+      ],
+      "quote": "It is expected that Suppliers make early bookings, where possible, booking well in advance to minimise costs",
+      "why": "booking early is 'where possible', not a ban on a late booking"
+    }
+  ],
+  "design_notes": "Line 146: 'All flights must be booked at set dates, no open return tickets may be booked.' So only the flight out on its set date is bought, at the lowest logical fare (ANA, 742.00; line 119); the flight home is booked once its date is set. The outbound date is fixed, so the dearer refundable fare is not needed."
+}

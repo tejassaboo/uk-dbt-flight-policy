@@ -1,0 +1,179 @@
+{
+  "id": "alder-pennant",
+  "category": "easy",
+  "overlays": [
+    "upgrade_not_taken"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Heathrow to Tokyo Haneda on 8 April for the pavilion fit-out meetings, please. My form was signed for business, but economy is fine for me: the cheapest seat you can get.",
+  "trip": {
+    "traveller_name": "Maeve Lindqvist",
+    "traveller_title": "Fit-out Project Manager",
+    "supplier": "Kinsale Exhibition Builders Ltd",
+    "origin": "LHR",
+    "destination": "HND",
+    "travel_date": "2025-04-08",
+    "booking_date": "2025-03-17",
+    "purpose": "Pavilion fit-out progress meetings with the Expo site team in Osaka (onward by rail from Tokyo)",
+    "trip_kind": "EXPO_SITE_WORK",
+    "requested_cabin": "ECONOMY",
+    "chosen_airline": "",
+    "wants_open_return": false,
+    "date_can_move": false,
+    "leisure_days": 0,
+    "work_only_date": "",
+    "leisure_notified": false,
+    "rail_option": "",
+    "rail_fare_cents": 0,
+    "rail_to_airport": "",
+    "sign_offs": [
+      {
+        "role": "CONTRACT_MANAGER",
+        "name": "Helen Achterberg",
+        "subject": "PRE_EXPENSE_AUTHORISATION",
+        "cabin": "BUSINESS",
+        "grounds": "Overnight long-haul flight before a full working day",
+        "given_on": "2025-03-12"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "LHR",
+        "destination": "HND",
+        "date": "2025-04-08",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "ba": {
+            "carrier": "BA",
+            "depart": "09:25",
+            "minutes": [
+              820
+            ]
+          },
+          "nh": {
+            "carrier": "NH",
+            "depart": "11:40",
+            "minutes": [
+              825
+            ]
+          },
+          "jl": {
+            "carrier": "JL",
+            "depart": "19:25",
+            "minutes": [
+              830
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "ba-economy",
+            "flight": "ba",
+            "cabin": "ECONOMY",
+            "fare_cents": 72400,
+            "seats": false
+          },
+          {
+            "slot": "ba-business",
+            "flight": "ba",
+            "cabin": "BUSINESS",
+            "fare_cents": 389000
+          },
+          {
+            "slot": "nh-economy",
+            "flight": "nh",
+            "cabin": "ECONOMY",
+            "fare_cents": 75850
+          },
+          {
+            "slot": "nh-business",
+            "flight": "nh",
+            "cabin": "BUSINESS",
+            "fare_cents": 402000
+          },
+          {
+            "slot": "jl-economy",
+            "flight": "jl",
+            "cabin": "ECONOMY",
+            "fare_cents": 78900
+          },
+          {
+            "slot": "jl-business",
+            "flight": "jl",
+            "cabin": "BUSINESS",
+            "fare_cents": 395500
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "nh-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "COST_SAVINGS",
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "CONTRACT_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "POLICY_STATEMENT"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        119,
+        119
+      ],
+      "sha256": "24d5a3750e0cde862923efd4b8cf196f4bc9314029b3567d9568120827f629bf",
+      "quote": "4.6 Suppliers are expected to book the lowest logical fare available.",
+      "why": "the default: the lowest logical fare"
+    },
+    {
+      "lines": [
+        131,
+        135
+      ],
+      "sha256": "061214c53f3583f0bad36420d5c0704175ced19161a343863167e46eaca068b1",
+      "quote": "4.9 The following limits on the class of travel permitted are as follows Flying Time (per flight) Class of Travel Up to 5 hours All journeys at public expense: Economy Over 5 hours All journeys at public expense: Economy (but see below*) Over 10 hours All journeys at public expense: Business (subject to prior agreement with DBT Contract Manager)",
+      "why": "the class of travel per flight: economy up to and over 5 hours, business over 10 hours with the Contract Manager's prior agreement"
+    },
+    {
+      "lines": [
+        58,
+        58
+      ],
+      "sha256": "0587dccc90ae23df85bbae6253ea8c4665fd40c551a67be8bf3d00617e62cb33",
+      "quote": "1.12 Travel must not be reserved or purchased without the DBT Contract Manager's pre-approval in writing as this will be required for all reimbursements.",
+      "why": "no travel reserved or purchased without the Contract Manager's written pre-approval"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        120,
+        123
+      ],
+      "quote": "Suppliers must obtain three quotes for all air travel",
+      "why": "the quotes go with the pre-approval request, which is already signed"
+    }
+  ],
+  "design_notes": "Nonstops of 820-830 minutes are over 10 hours, so business is the class with the Contract Manager's agreement (line 135), which the form gives; the traveller asks for the cheapest economy, which is permitted. The cheapest fare (BA at 724.00) is sold out, so the lowest logical fare is ANA at 758.50 (line 119)."
+}

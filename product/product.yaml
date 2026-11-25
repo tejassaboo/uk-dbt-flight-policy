@@ -1,0 +1,13 @@
+_ > nanoagent.plugin.v0001.ProductConfig:
+tagline: "One flight request, a government contract's real travel schedule: book it, refuse it, or hold it for sign-off"
+summary: "An agent handles one supplier traveller's flight request under the UK Department for Business and Trade's Contract Schedule 31 travel and subsistence policy (supplier travel for Expo 2025 in Japan), read verbatim. It reads the trip record, searches a simulated flight world (real airports and airlines, synthetic schedules and fares in pounds) and submits a decision with the offer, cabin, reason, approver and handbook section. A deterministic verifier rebuilds the offers and the handbook's answer itself and checks every field. Sixteen cases cover class of travel per flight, the Director's next class up (never first), leisure days at the traveller's cost to the penny, rail against a flight from Scotland, open returns, loyalty points, weekend trips home and the schedule's own unclear words."
+highlights:
+  - "The verbatim schedule: no paraphrase, no rules restated in the task"
+  - "Per-flight class bands: a cheap connection's business seat is not a long-haul business seat"
+  - "Unclear clauses become holds for approval, each once, with clear twins on both sides"
+  - "Fully offline: a hash-seeded flight world with unguessable offer ids"
+steps:
+  - "Name a case, for example alder-pennant, with the traveller's request"
+  - "The agent reads the trip record and searches flights on the trip's route and date"
+  - "It submits BOOK, REFUSE or FLAG_FOR_APPROVAL with the offer, cabin, reason, approver and section"
+  - "The verifier recomputes the handbook's answer and checks every field"

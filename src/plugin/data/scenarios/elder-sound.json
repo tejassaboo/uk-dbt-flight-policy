@@ -1,0 +1,178 @@
+{
+  "id": "elder-sound",
+  "category": "boundary_twin",
+  "overlays": [
+    "multi_leg"
+  ],
+  "twin_of": "damson-ridge",
+  "twin_fact": "nonstop business seats on sale or sold out",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Heathrow to Haneda on 3 September for the UK national day programme. Business class please, my form covers it. If business isn't allowed on what's left, book economy; I have to be at the national day events in Osaka.",
+  "trip": {
+    "traveller_name": "Freya Holloway",
+    "traveller_title": "Events Production Manager",
+    "supplier": "Kinsale Exhibition Builders Ltd",
+    "origin": "LHR",
+    "destination": "HND",
+    "travel_date": "2025-09-03",
+    "booking_date": "2025-08-11",
+    "purpose": "UK national day programme at the Expo site, Osaka (onward by rail from Tokyo)",
+    "trip_kind": "EXPO_SITE_WORK",
+    "requested_cabin": "BUSINESS",
+    "chosen_airline": "",
+    "wants_open_return": false,
+    "date_can_move": false,
+    "leisure_days": 0,
+    "work_only_date": "",
+    "leisure_notified": false,
+    "rail_option": "",
+    "rail_fare_cents": 0,
+    "rail_to_airport": "",
+    "sign_offs": [
+      {
+        "role": "CONTRACT_MANAGER",
+        "name": "Helen Achterberg",
+        "subject": "PRE_EXPENSE_AUTHORISATION",
+        "cabin": "BUSINESS",
+        "grounds": "Overnight long-haul flight before event duty",
+        "given_on": "2025-08-06"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "LHR",
+        "destination": "HND",
+        "date": "2025-09-03",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "doha": {
+            "carrier": "QR",
+            "via": [
+              "DOH"
+            ],
+            "depart": "08:20",
+            "minutes": [
+              405,
+              590
+            ],
+            "layovers": [
+              150
+            ]
+          },
+          "ba": {
+            "carrier": "BA",
+            "depart": "12:35",
+            "minutes": [
+              825
+            ]
+          },
+          "jl": {
+            "carrier": "JL",
+            "depart": "19:25",
+            "minutes": [
+              830
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "doha-economy",
+            "flight": "doha",
+            "cabin": "ECONOMY",
+            "fare_cents": 63800
+          },
+          {
+            "slot": "doha-business",
+            "flight": "doha",
+            "cabin": "BUSINESS",
+            "fare_cents": 268000
+          },
+          {
+            "slot": "ba-economy",
+            "flight": "ba",
+            "cabin": "ECONOMY",
+            "fare_cents": 76200
+          },
+          {
+            "slot": "ba-business",
+            "flight": "ba",
+            "cabin": "BUSINESS",
+            "fare_cents": 412500,
+            "seats": false
+          },
+          {
+            "slot": "jl-economy",
+            "flight": "jl",
+            "cabin": "ECONOMY",
+            "fare_cents": 74900
+          },
+          {
+            "slot": "jl-business",
+            "flight": "jl",
+            "cabin": "BUSINESS",
+            "fare_cents": 405800,
+            "seats": false
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "doha-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LONG_FLIGHT_CONDITION_NOT_MET",
+      "UPGRADE_NOT_ELIGIBLE"
+    ],
+    "approvers": [
+      "CONTRACT_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "POLICY_STATEMENT"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        131,
+        135
+      ],
+      "sha256": "061214c53f3583f0bad36420d5c0704175ced19161a343863167e46eaca068b1",
+      "quote": "4.9 The following limits on the class of travel permitted are as follows Flying Time (per flight) Class of Travel Up to 5 hours All journeys at public expense: Economy Over 5 hours All journeys at public expense: Economy (but see below*) Over 10 hours All journeys at public expense: Business (subject to prior agreement with DBT Contract Manager)",
+      "why": "the class of travel per flight: economy up to and over 5 hours, business over 10 hours with the Contract Manager's prior agreement"
+    },
+    {
+      "lines": [
+        119,
+        119
+      ],
+      "sha256": "24d5a3750e0cde862923efd4b8cf196f4bc9314029b3567d9568120827f629bf",
+      "quote": "4.6 Suppliers are expected to book the lowest logical fare available.",
+      "why": "the default: the lowest logical fare"
+    },
+    {
+      "lines": [
+        339,
+        345
+      ],
+      "sha256": "d28d01f4c276d341f125e47982da298facf640b3e20c6cc5eee5d90b269c7589",
+      "quote": "Mode of Travel Class of Travel Business Justification for Upgrade",
+      "why": "the pre-expense authorisation form records the class of travel and the business justification for an upgrade"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "The nonstop business seats are sold out. The only business fare left is the Qatar connection, whose flights (405 and 590 minutes) are each 10 hours or less: economy is the class on both (lines 132-134), and flying time is per flight, never added up. So business is not allowed, and the traveller asked for economy then: the lowest logical fare is the Qatar economy fare at 638.00 (line 119)."
+}

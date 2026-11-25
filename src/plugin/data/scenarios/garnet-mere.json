@@ -1,0 +1,206 @@
+{
+  "id": "garnet-mere",
+  "category": "boundary_twin",
+  "overlays": [
+    "personal_travel",
+    "date_arithmetic",
+    "month_end"
+  ],
+  "twin_of": "fennel-arch",
+  "twin_fact": "Monday's lowest fare 65120 or 65520 pence against Friday's 65120",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "My work at the Expo wraps up on Friday 30 May, but I'd like to stay on in Japan over the weekend and fly Haneda to Heathrow on Monday 2 June instead. The contract manager knows. If the extra days mean the Monday flight can't all go on the contract, book me whichever flight home it does cover. Economy.",
+  "trip": {
+    "traveller_name": "Ines Kowalczyk",
+    "traveller_title": "Structural Engineer",
+    "supplier": "Kinsale Exhibition Builders Ltd",
+    "origin": "HND",
+    "destination": "LHR",
+    "travel_date": "2025-06-02",
+    "booking_date": "2025-05-06",
+    "purpose": "Flying home after a pavilion structural inspection; the work ends on Friday 30 May",
+    "trip_kind": "EXPO_SITE_WORK",
+    "requested_cabin": "ECONOMY",
+    "chosen_airline": "",
+    "wants_open_return": false,
+    "date_can_move": false,
+    "leisure_days": 3,
+    "work_only_date": "2025-05-30",
+    "leisure_notified": true,
+    "rail_option": "",
+    "rail_fare_cents": 0,
+    "rail_to_airport": "",
+    "sign_offs": [
+      {
+        "role": "CONTRACT_MANAGER",
+        "name": "Helen Achterberg",
+        "subject": "PRE_EXPENSE_AUTHORISATION",
+        "cabin": "ECONOMY",
+        "grounds": "",
+        "given_on": "2025-04-29"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "monday",
+        "origin": "HND",
+        "destination": "LHR",
+        "date": "2025-06-02",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "jl": {
+            "carrier": "JL",
+            "depart": "10:15",
+            "minutes": [
+              885
+            ]
+          },
+          "nh": {
+            "carrier": "NH",
+            "depart": "11:50",
+            "minutes": [
+              880
+            ]
+          },
+          "ba": {
+            "carrier": "BA",
+            "depart": "13:05",
+            "minutes": [
+              890
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "mon-jl-economy",
+            "flight": "jl",
+            "cabin": "ECONOMY",
+            "fare_cents": 65520
+          },
+          {
+            "slot": "mon-nh-economy",
+            "flight": "nh",
+            "cabin": "ECONOMY",
+            "fare_cents": 66800
+          },
+          {
+            "slot": "mon-ba-economy",
+            "flight": "ba",
+            "cabin": "ECONOMY",
+            "fare_cents": 67450
+          }
+        ]
+      },
+      {
+        "name": "friday",
+        "origin": "HND",
+        "destination": "LHR",
+        "date": "2025-05-30",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "jl": {
+            "carrier": "JL",
+            "depart": "10:15",
+            "minutes": [
+              885
+            ]
+          },
+          "nh": {
+            "carrier": "NH",
+            "depart": "11:50",
+            "minutes": [
+              880
+            ]
+          },
+          "ba": {
+            "carrier": "BA",
+            "depart": "13:05",
+            "minutes": [
+              890
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "fri-jl-economy",
+            "flight": "jl",
+            "cabin": "ECONOMY",
+            "fare_cents": 66300
+          },
+          {
+            "slot": "fri-nh-economy",
+            "flight": "nh",
+            "cabin": "ECONOMY",
+            "fare_cents": 65120
+          },
+          {
+            "slot": "fri-ba-economy",
+            "flight": "ba",
+            "cabin": "ECONOMY",
+            "fare_cents": 68900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "fri-nh-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "PERSONAL_TIME_EXTRA_COST",
+      "PERSONAL_TRAVEL_NOT_COVERED"
+    ],
+    "approvers": [
+      "CONTRACT_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "EXPENSE_PRE_APPROVAL",
+      "POLICY_STATEMENT",
+      "PURPOSE"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        124,
+        130
+      ],
+      "sha256": "d5b1f382ff0fb32b0456165e303e04a55744bde91ebb93f2b23cc9e6612719ad",
+      "quote": "4.8 If a Supplier plans to spend personal time at the beginning or end of a business trip, they must inform the DBT Contract Manager. Additional costs must be covered by the Supplier if earlier or later return flights are more expensive than flights that would have been taken purely for the purposes of the business trip. Screenshots of the flights should be provided to evidence that the alternative flights/transport are not more expensive.",
+      "why": "personal time: tell the Contract Manager; the Supplier covers any extra fare over the flights purely for business"
+    },
+    {
+      "lines": [
+        65,
+        68
+      ],
+      "sha256": "0945b60890d405d4374a7f646f94a0fd8f6afc73df77e0cc79fcf250836d7cc0",
+      "quote": "1.14 If a Supplier plans to spend personal time at the beginning or end of a business trip, the DBT Contract Manager must be informed. All additional costs (travel, accommodation, subsistence) must be covered by the Supplier. The DBT Contract Manager will provide specific details on how to claim incurred expenses.",
+      "why": "personal time: the Contract Manager is informed and the Supplier covers extra costs"
+    },
+    {
+      "lines": [
+        119,
+        119
+      ],
+      "sha256": "24d5a3750e0cde862923efd4b8cf196f4bc9314029b3567d9568120827f629bf",
+      "quote": "4.6 Suppliers are expected to book the lowest logical fare available.",
+      "why": "the default: the lowest logical fare"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "The lowest Monday fare (JAL, 655.20) is 4.00 more than the lowest Friday fare (ANA, 651.20), so the later flight is 'more expensive than flights that would have been taken purely for the purposes of the business trip' (lines 124-130) and the extra would be the Supplier's. The traveller asked, in that case, for the flight home the contract covers: ANA on Friday 30 May, the lowest logical fare that day (line 119)."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "uk-dbt-flight-policy",
+  "name": "UK DBT Supplier Travel Flight Booking",
+  "slug": "uk-dbt",
+  "title": "Department for Business and Trade Contract Schedule 31: Travel & Subsistence Expenses Policy (supplier travel for Expo 2025 Osaka; v1.0 June 2024)",
+  "frozen_file": "uk-dbt_policy.txt",
+  "sha256": "8af479aa395a940d956c7b569c5c771d81c705a4324099827ead9d44a7a34e33",
+  "raw_pdf_sha256": "8aa5889a1b8e163d9655bc3b735ddfd5fc4d82504aec74126c441a9c22439774",
+  "words": 2854,
+  "lines": 363,
+  "source": "UK Contracts Finder notice (URL not recorded locally; the raw PDF is the pinned copy)",
+  "frozen_on": "2026-11-24",
+  "scenario_count": 16,
+  "currency": "GBP",
+  "background_offers": 0
+}
