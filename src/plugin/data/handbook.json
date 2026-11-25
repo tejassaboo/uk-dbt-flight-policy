@@ -8,7 +8,7 @@
   "raw_pdf_sha256": "8aa5889a1b8e163d9655bc3b735ddfd5fc4d82504aec74126c441a9c22439774",
   "words": 2854,
   "lines": 363,
-  "source": "UK Contracts Finder notice (URL not recorded locally; the raw PDF is the pinned copy)",
+  "source": "https://www.contractsfinder.service.gov.uk/Notice/Attachment/d320d676-3129-48b6-b05b-073f1ffb714e; byte-identical to the pinned raw PDF (sha256 checked 2026-11-25); an attachment to a UK Contracts Finder notice",
   "frozen_on": "2026-11-24",
   "scenario_count": 16,
   "currency": "GBP",
