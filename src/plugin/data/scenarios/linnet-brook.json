@@ -9,7 +9,7 @@
   "twin_fact": "",
   "flag_twins": [],
   "ambiguity_note": "none",
-  "request": "Heathrow to Haneda on 10 April. I have to be at the opening rehearsal and the date can't move. Economy if there's anything left; my director has already signed off premium economy if there isn't.",
+  "request": "Heathrow to Haneda on 10 April. I have to be at the opening rehearsal on 12 April and the date can't move. Economy if there's anything left; the Department's director for the pavilion programme has already signed off premium economy if there isn't.",
   "trip": {
     "traveller_name": "Sofia Marchetti",
     "traveller_title": "Show Control Engineer",
@@ -18,7 +18,7 @@
     "destination": "HND",
     "travel_date": "2025-04-10",
     "booking_date": "2025-03-24",
-    "purpose": "Expo opening rehearsal at the UK pavilion, Osaka (onward by rail from Tokyo)",
+    "purpose": "Expo opening rehearsal at the UK pavilion, Osaka, on 12 April (onward by rail from Tokyo)",
     "trip_kind": "EXPO_SITE_WORK",
     "requested_cabin": "ECONOMY",
     "chosen_airline": "",
@@ -156,7 +156,8 @@
     ],
     "reason_codes": [
       "NEXT_CLASS_UP_AUTHORISED",
-      "NO_ECONOMY_SEATS_URGENT"
+      "NO_ECONOMY_SEATS_URGENT",
+      "PREMIUM_ECONOMY_ALLOWED"
     ],
     "approvers": [
       "CONTRACT_MANAGER",

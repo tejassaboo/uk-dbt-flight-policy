@@ -8,7 +8,7 @@
   "twin_fact": "",
   "flag_twins": [],
   "ambiguity_note": "none",
-  "request": "Heathrow to Haneda on 18 June, please. My director has signed off first class because I go straight into the pavilion handover when I land. If first isn't allowed, book what the policy does allow; I have to be at the handover.",
+  "request": "Heathrow to Haneda on 18 June, please. The Department's director for the pavilion programme has signed off first class because I go straight into the pavilion handover when I land. If first isn't allowed, book what the policy does allow; I have to be at the handover.",
   "trip": {
     "traveller_name": "Adaeze Okafor",
     "traveller_title": "Commissioning Director",
@@ -17,7 +17,7 @@
     "destination": "HND",
     "travel_date": "2025-06-18",
     "booking_date": "2025-05-26",
-    "purpose": "Pavilion handover to the Department at the Expo site, Osaka, the day after landing",
+    "purpose": "Pavilion handover to the Department at the Expo site, Osaka, on arrival (onward by rail from Tokyo)",
     "trip_kind": "EXPO_SITE_WORK",
     "requested_cabin": "FIRST",
     "chosen_airline": "",

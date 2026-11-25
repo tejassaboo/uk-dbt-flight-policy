@@ -304,7 +304,7 @@ def premium(trip, on_trip, reason):
     if allowed and unclear:
         raise ValueError("premium economy offers both allowed and unclear are not modelled")
     if allowed:
-        return answer(Decision.BOOK, allowed, [reason, ReasonCode.NEXT_CLASS_UP_AUTHORISED],
+        return answer(Decision.BOOK, allowed, [reason, ReasonCode.NEXT_CLASS_UP_AUTHORISED, ReasonCode.PREMIUM_ECONOMY_ALLOWED],
                       [*ON_FILE, Approver.DIRECTOR], AIR,
                       "Lines 133-134 and 137-143: every flight is over 5 hours, where economy is the class 'but see "
                       "below*', and the Director's note on file allows the next higher class on one of the listed "

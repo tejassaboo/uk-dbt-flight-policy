@@ -8,7 +8,7 @@
   "twin_fact": "nonstop business seats on sale or sold out",
   "flag_twins": [],
   "ambiguity_note": "none",
-  "request": "Heathrow to Haneda on 3 September for the UK national day programme. Business class please, my form covers it. If business isn't allowed on what's left, book economy; I have to be at the national day events in Osaka.",
+  "request": "Heathrow to Haneda on 3 September for the UK national day programme. Business class please, my form covers it. If business isn't allowed on what's left, book economy; I have to be at the national day events in Osaka, which start on 6 September.",
   "trip": {
     "traveller_name": "Freya Holloway",
     "traveller_title": "Events Production Manager",
@@ -17,7 +17,7 @@
     "destination": "HND",
     "travel_date": "2025-09-03",
     "booking_date": "2025-08-11",
-    "purpose": "UK national day programme at the Expo site, Osaka (onward by rail from Tokyo)",
+    "purpose": "UK national day programme at the Expo site, Osaka, from 6 September (onward by rail from Tokyo)",
     "trip_kind": "EXPO_SITE_WORK",
     "requested_cabin": "BUSINESS",
     "chosen_airline": "",

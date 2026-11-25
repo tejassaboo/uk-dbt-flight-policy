@@ -172,7 +172,8 @@ scenario(
     "but economy is fine for me: the cheapest seat you can get.",
     trip(traveller_name="Maeve Lindqvist", traveller_title="Fit-out Project Manager", origin="LHR", destination="HND",
          travel_date="2025-04-08", booking_date="2025-03-17",
-         purpose="Pavilion fit-out progress meetings with the Expo site team in Osaka (onward by rail from Tokyo)",
+         purpose="Pavilion fit-out progress meetings with the Expo site team in Osaka from 10 April (onward by rail "
+                 "from Tokyo)",
          sign_offs=[form("BUSINESS", "2025-03-12", grounds="Overnight long-haul flight before a full working day")]),
     [search("main", "LHR", "HND", "2025-04-08", NONSTOPS, [
         offer("ba-economy", "ba", "ECONOMY", 72400, seats=False),
@@ -195,7 +196,7 @@ scenario(
     "Economy, and I don't mind changing planes if it's cheaper.",
     trip(traveller_name="Oliver Szabo", traveller_title="AV Systems Engineer", origin="LHR", destination="NRT",
          travel_date="2025-05-12", booking_date="2025-04-14", trip_kind="SUPPLIER_MEETINGS",
-         purpose="Coordination meetings with other suppliers contracted for the UK pavilion",
+         purpose="Coordination meetings with other suppliers contracted for the UK pavilion, from 14 May",
          sign_offs=[form("ECONOMY", "2025-04-09")]),
     [search("main", "LHR", "NRT", "2025-05-12", {
         "dubai": {"carrier": "EK", "via": ["DXB"], "depart": "08:30", "minutes": [415, 580], "layovers": [125]},
@@ -257,13 +258,13 @@ def doha_offers(nonstop_business_seats):
 
 DOHA_REQUEST = ("Heathrow to Haneda on 3 September for the UK national day programme. Business class please, my form "
                 "covers it. If business isn't allowed on what's left, book economy; I have to be at the national day "
-                "events in Osaka.")
+                "events in Osaka, which start on 6 September.")
 
 
 def doha_trip(name, title):
     return trip(traveller_name=name, traveller_title=title, origin="LHR", destination="HND",
                 travel_date="2025-09-03", booking_date="2025-08-11", requested_cabin="BUSINESS",
-                purpose="UK national day programme at the Expo site, Osaka (onward by rail from Tokyo)",
+                purpose="UK national day programme at the Expo site, Osaka, from 6 September (onward by rail from Tokyo)",
                 sign_offs=[form("BUSINESS", "2025-08-06", grounds="Overnight long-haul flight before event duty")])
 
 
@@ -349,12 +350,12 @@ scenario(
 
 scenario(
     "heather-vane", "multi_rule", ["dearer_option"],
-    "Heathrow to Haneda on 18 June, please. My director has signed off first class because I go straight into the "
+    "Heathrow to Haneda on 18 June, please. The Department's director for the pavilion programme has signed off first class because I go straight into the "
     "pavilion handover when I land. If first isn't allowed, book what the policy does allow; I have to be at the "
     "handover.",
     trip(traveller_name="Adaeze Okafor", traveller_title="Commissioning Director", origin="LHR", destination="HND",
          travel_date="2025-06-18", booking_date="2025-05-26", requested_cabin="FIRST",
-         purpose="Pavilion handover to the Department at the Expo site, Osaka, the day after landing",
+         purpose="Pavilion handover to the Department at the Expo site, Osaka, on arrival (onward by rail from Tokyo)",
          sign_offs=[form("BUSINESS", "2025-05-20", grounds="Overnight long-haul flight before the handover"),
                     director("FIRST", "Required to work immediately on arrival at the handover", "2025-05-21")]),
     [search("main", "LHR", "HND", "2025-06-18", {
@@ -440,7 +441,7 @@ scenario(
     "at the round tables.",
     trip(traveller_name="Gareth Pryce", traveller_title="Stakeholder Engagement Manager", origin="LHR",
          destination="HND", travel_date="2025-05-21", booking_date="2025-04-28", trip_kind="STAKEHOLDER_MEETINGS",
-         chosen_airline="Japan Airlines", purpose="Stakeholder round tables for the UK pavilion programme",
+         chosen_airline="Japan Airlines", purpose="Stakeholder round tables for the UK pavilion programme, from 23 May",
          sign_offs=[form("ECONOMY", "2025-04-23")]),
     [search("main", "LHR", "HND", "2025-05-21", NONSTOPS, [
         offer("ba-economy", "ba", "ECONOMY", 75900),
@@ -456,11 +457,12 @@ scenario(
 
 scenario(
     "linnet-brook", "hidden_clause", ["multi_leg", "dearer_option"],
-    "Heathrow to Haneda on 10 April. I have to be at the opening rehearsal and the date can't move. Economy if there's "
-    "anything left; my director has already signed off premium economy if there isn't.",
+    "Heathrow to Haneda on 10 April. I have to be at the opening rehearsal on 12 April and the date can't move. Economy if there's "
+    "anything left; the Department's director for the pavilion programme has already signed off premium economy if "
+    "there isn't.",
     trip(traveller_name="Sofia Marchetti", traveller_title="Show Control Engineer", origin="LHR", destination="HND",
          travel_date="2025-04-10", booking_date="2025-03-24",
-         purpose="Expo opening rehearsal at the UK pavilion, Osaka (onward by rail from Tokyo)",
+         purpose="Expo opening rehearsal at the UK pavilion, Osaka, on 12 April (onward by rail from Tokyo)",
          sign_offs=[form("ECONOMY", "2025-03-19"),
                     director("PREMIUM_ECONOMY", "Economy is sold out on every flight that day and the rehearsal date "
                              "cannot move", "2025-03-21")]),
@@ -476,7 +478,7 @@ scenario(
         offer("doha-late-economy", "doha-late", "ECONOMY", 66100, seats=False),
         offer("doha-late-premium", "doha-late", "PREMIUM_ECONOMY", 131900),
     ])],
-    expected("BOOK", ["dubai-premium"], ["PREMIUM_ECONOMY"], ["NEXT_CLASS_UP_AUTHORISED", "NO_ECONOMY_SEATS_URGENT"],
+    expected("BOOK", ["dubai-premium"], ["PREMIUM_ECONOMY"], ["NEXT_CLASS_UP_AUTHORISED", "NO_ECONOMY_SEATS_URGENT", "PREMIUM_ECONOMY_ALLOWED"],
              [*ON_FILE, "DIRECTOR"], AIR),
     [TABLE, NO_SEATS, LOWEST],
     "Economy is sold out on every flight. Every flight is over 5 hours and at most 10 (405-595 minutes), where economy "
@@ -492,7 +494,7 @@ scenario(
     "economy. I'll get a taxi to Heathrow.",
     trip(traveller_name="Lena Fischer", traveller_title="Exhibit Maintenance Technician", origin="LHR",
          destination="HND", travel_date="2025-07-09", booking_date="2025-07-07",
-         purpose="Exhibit maintenance shift at the UK pavilion, Osaka (onward by rail from Tokyo)",
+         purpose="Exhibit maintenance shift at the UK pavilion, Osaka, from 12 July (onward by rail from Tokyo)",
          sign_offs=[form("ECONOMY", "2025-07-04")]),
     [search("main", "LHR", "HND", "2025-07-09", NONSTOPS, [
         offer("ba-economy", "ba", "ECONOMY", 81500),
@@ -537,7 +539,7 @@ scenario(
     "one, please; my form went in for economy. I'd rather wait for business than fly economy on this one.",
     trip(traveller_name="Bethan Hughes", traveller_title="Programme Director", origin="LHR", destination="HND",
          travel_date="2025-10-01", booking_date="2025-09-08", requested_cabin="BUSINESS",
-         trip_kind="STAKEHOLDER_MEETINGS", purpose="Closing-fortnight stakeholder programme at the Expo, Osaka",
+         trip_kind="STAKEHOLDER_MEETINGS", purpose="Closing-fortnight stakeholder programme at the Expo, Osaka, from 3 October",
          sign_offs=[form("ECONOMY", "2025-09-03")]),
     [search("main", "LHR", "HND", "2025-10-01", NONSTOPS, [
         offer("ba-economy", "ba", "ECONOMY", 75600),
@@ -559,7 +561,8 @@ scenario(
 
 scenario(
     "plover-reach", "flag", ["multi_leg", "unclear_phrase"],
-    "Heathrow to Haneda on 25 June; via Hong Kong is fine. My director has approved premium economy because I go "
+    "Heathrow to Haneda on 25 June; via Hong Kong is fine. The Department's director for the pavilion programme has "
+    "approved premium economy because I go "
     "straight into the technical rehearsal when I land. If premium economy isn't allowed, book economy.",
     trip(traveller_name="Kenji Hartley", traveller_title="Technical Rehearsal Lead", origin="LHR", destination="HND",
          travel_date="2025-06-25", booking_date="2025-06-02", requested_cabin="PREMIUM_ECONOMY",
