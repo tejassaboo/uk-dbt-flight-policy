@@ -1,5 +1,7 @@
 # UK DBT Supplier Travel Flight Booking
 
+**Source of the handbook:** https://www.contractsfinder.service.gov.uk/Notice/Attachment/d320d676-3129-48b6-b05b-073f1ffb714e. The agent reads it verbatim (bundled at `src/plugin/data/policy.txt`); flights, fares and trips are synthetic.
+
 The handbook is the UK Department for Business and Trade's *Contract Schedule 31: Travel & Subsistence Expenses
 Policy* (supplier travel to and within Japan for Expo 2025, v1.0 June 2024), a public contract schedule bundled
 verbatim for research. No affiliation with the Department. Its public URL is not yet confirmed (the pinned copy is
