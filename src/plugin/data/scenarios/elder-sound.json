@@ -125,12 +125,16 @@
   "expected": {
     "decision": "BOOK",
     "offer_slots": [
+      "doha-business",
       "doha-economy"
     ],
     "cabins": [
+      "BUSINESS",
       "ECONOMY"
     ],
     "reason_codes": [
+      "INTERNATIONAL_LONG_FLIGHT",
+      "LONG_FLIGHT_APPROVED",
       "LONG_FLIGHT_CONDITION_NOT_MET",
       "UPGRADE_NOT_ELIGIBLE"
     ],
@@ -174,5 +178,5 @@
     }
   ],
   "distractors": [],
-  "design_notes": "The nonstop business seats are sold out. The only business fare left is the Qatar connection, whose flights (405 and 590 minutes) are each 10 hours or less: economy is the class on both (lines 132-134), and flying time is per flight, never added up. So business is not allowed, and the traveller asked for economy then: the lowest logical fare is the Qatar economy fare at 638.00 (line 119)."
+  "design_notes": "The nonstop business seats are sold out. The only business fare left is the Qatar connection, whose flights (405 and 590 minutes) are each 10 hours or less: economy is the class on both (lines 132-134), with flying time per flight. So business is not allowed, and the traveller asked for economy then: the lowest logical fare is the Qatar economy fare at 638.00 (line 119). The handbook does not say whether a connection is one flight; read as one (995 minutes), it is over 10 hours and the form naming business allows the Qatar business fare, so that is accepted too (validation wave 4)."
 }

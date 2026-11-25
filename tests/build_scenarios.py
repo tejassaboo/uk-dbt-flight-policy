@@ -272,25 +272,31 @@ scenario(
     "damson-ridge", "boundary_twin", ["multi_leg", "dearer_option"],
     DOHA_REQUEST, doha_trip("Callum Rees", "Events Production Manager"),
     [search("main", "LHR", "HND", "2025-09-03", DOHA_FLIGHTS, doha_offers(True))],
-    expected("BOOK", ["jl-business"], ["BUSINESS"], ["INTERNATIONAL_LONG_FLIGHT", "LONG_FLIGHT_APPROVED"], ON_FILE, AIR),
+    expected("BOOK", ["doha-business", "jl-business"], ["BUSINESS"], ["INTERNATIONAL_LONG_FLIGHT", "LONG_FLIGHT_APPROVED"],
+             ON_FILE, AIR),
     [TABLE, FORM_CLASS, LOWEST],
     "Per flight (line 132): the nonstops (825, 830 minutes) are over 10 hours, so business with the Contract Manager's "
     "prior agreement (line 135), which the signed form naming business gives. The Qatar business fare is cheaper "
     "(2,680.00) but its flights are 405 and 590 minutes, each 10 hours or less, where the class is economy (lines "
-    "133-134). The lowest logical business fare is JAL at 4,058.00.",
+    "133-134). The lowest logical business fare is JAL at 4,058.00. The handbook does not say whether a connection is "
+    "one flight; read as one (995 minutes), the Qatar business fare is the lowest logical business fare, so it is "
+    "accepted too (validation wave 4).",
     twin_of="elder-sound", twin_fact="nonstop business seats on sale or sold out")
 
 scenario(
     "elder-sound", "boundary_twin", ["multi_leg"],
     DOHA_REQUEST, doha_trip("Freya Holloway", "Events Production Manager"),
     [search("main", "LHR", "HND", "2025-09-03", DOHA_FLIGHTS, doha_offers(False))],
-    expected("BOOK", ["doha-economy"], ["ECONOMY"], ["LONG_FLIGHT_CONDITION_NOT_MET", "UPGRADE_NOT_ELIGIBLE"], ON_FILE,
-             AIR),
+    expected("BOOK", ["doha-business", "doha-economy"], ["BUSINESS", "ECONOMY"],
+             ["INTERNATIONAL_LONG_FLIGHT", "LONG_FLIGHT_APPROVED", "LONG_FLIGHT_CONDITION_NOT_MET", "UPGRADE_NOT_ELIGIBLE"],
+             ON_FILE, AIR),
     [TABLE, LOWEST, FORM_CLASS],
     "The nonstop business seats are sold out. The only business fare left is the Qatar connection, whose flights (405 "
-    "and 590 minutes) are each 10 hours or less: economy is the class on both (lines 132-134), and flying time is per "
-    "flight, never added up. So business is not allowed, and the traveller asked for economy then: the lowest logical "
-    "fare is the Qatar economy fare at 638.00 (line 119).",
+    "and 590 minutes) are each 10 hours or less: economy is the class on both (lines 132-134), with flying time per "
+    "flight. So business is not allowed, and the traveller asked for economy then: the lowest logical fare is the "
+    "Qatar economy fare at 638.00 (line 119). The handbook does not say whether a connection is one flight; read as "
+    "one (995 minutes), it is over 10 hours and the form naming business allows the Qatar business fare, so that is "
+    "accepted too (validation wave 4).",
     twin_of="damson-ridge", twin_fact="nonstop business seats on sale or sold out")
 
 LEISURE_REQUEST = ("My work at the Expo wraps up on Friday 30 May, but I'd like to stay on in Japan over the weekend "

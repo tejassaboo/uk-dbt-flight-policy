@@ -18,6 +18,12 @@ on flights added together and never with ground time. An itinerary whose every f
 it on every reading, and one whose every flight is at or under it is not. When one flight is over and another
 is not, the world sells one cabin on every flight of the offer, and the table does not say how a per-flight
 class applies to such a ticket: unclear (None).
+
+The handbook does not say what a "flight" is on a connection. The one-way journey with a change of planes (the
+offer, whose flights add to its flying time) is also a reading of "per flight" (EDGE_CASES 3.4: a measure not
+defined for connections). Under it, a connection whose flights add to more than 10 hours is over the business
+limit. A business request accepts the cheapest business fare of either reading (validation wave 4, 2026-11-25);
+``over`` keeps the per-flight measure for every other rule.
 """
 
 from contract import Approver, Cabin, Clause, Decision, ReasonCode, SignOffSubject, TripKind
@@ -244,13 +250,37 @@ def business_offers(on_trip):
     return qualifying
 
 
+def journey_over(rule, offer):
+    """The other reading of 'Flying Time (per flight)' (line 132) on a connection: the one-way journey is the
+    flight, and its flights' scheduled minutes are added (never ground time)."""
+    return sum(segment.scheduled_minutes for segment in offer.segments) > LIMITS[rule]
+
+
+LONG_FLIGHT = [ReasonCode.LONG_FLIGHT_APPROVED, ReasonCode.INTERNATIONAL_LONG_FLIGHT]
+
+
 def business(trip, on_trip, form):
     """A business request. Line 135: 'Over 10 hours ... Business (subject to prior agreement with DBT Contract
-    Manager)', per flight (line 132). The agreement is the pre-approval form naming business (lines 339-345)."""
+    Manager)', per flight (line 132). The agreement is the pre-approval form naming business (lines 339-345).
+    A connection under 'per flight' is open (module docstring), so the cheapest business fare whose flights add
+    to over 10 hours is accepted beside the per-flight answer."""
     if higher_cabin(trip):
         raise ValueError("a business request with a Director's note on file is not modelled")
     qualifying = business_offers(on_trip)
+    journey = cheapest([offer for offer in in_cabin(on_trip, Cabin.BUSINESS) if journey_over("over-ten", offer)])
+    if journey and form.cabin != Cabin.BUSINESS and journey != qualifying:
+        raise ValueError("a connection's business fare without business agreed is not modelled")
     if not qualifying:
+        if journey:
+            return answer(Decision.BOOK, [*lowest_economy(on_trip), *journey],
+                          [ReasonCode.UPGRADE_NOT_ELIGIBLE, ReasonCode.LONG_FLIGHT_CONDITION_NOT_MET, *LONG_FLIGHT],
+                          ON_FILE, AIR,
+                          "Lines 132-135: business is the class only for a flight over 10 hours. The business seats "
+                          "still on sale are on a connection whose flights are each 10 hours or less, so per flight "
+                          "business is not allowed and the traveller asked for economy then: the lowest logical fare "
+                          "(line 119). The handbook does not say whether a connection is one flight; read as one, its "
+                          "flying time is over 10 hours and the form naming business allows its business fare (line "
+                          "135). Either is accepted.")
         return answer(Decision.BOOK, lowest_economy(on_trip),
                       [ReasonCode.UPGRADE_NOT_ELIGIBLE, ReasonCode.LONG_FLIGHT_CONDITION_NOT_MET], ON_FILE, AIR,
                       "Lines 132-135: business is the class only for a flight over 10 hours, counted per flight. The "
@@ -258,12 +288,19 @@ def business(trip, on_trip, form):
                       "(economy, lines 133-134), so business is not allowed; the traveller asked for economy then: the "
                       "lowest logical fare (line 119).")
     if form.cabin == Cabin.BUSINESS:
-        return answer(Decision.BOOK, qualifying, [ReasonCode.LONG_FLIGHT_APPROVED, ReasonCode.INTERNATIONAL_LONG_FLIGHT],
+        if journey != qualifying:
+            return answer(Decision.BOOK, [*qualifying, *journey], LONG_FLIGHT, ON_FILE, AIR,
+                          "Line 135: the nonstop is over 10 hours, so business is the class, subject to the Contract "
+                          "Manager's prior agreement, which the signed pre-approval form naming business gives. Per "
+                          "flight, a cheaper business fare on a connection whose flights are each 10 hours or less is "
+                          "not allowed (lines 132-134), so the lowest logical business fare is the nonstop (line 119). "
+                          "The handbook does not say whether a connection is one flight; read as one, its flying time "
+                          "is over 10 hours and its cheaper business fare is the lowest logical one. Either is accepted.")
+        return answer(Decision.BOOK, qualifying, LONG_FLIGHT,
                       ON_FILE, AIR,
                       "Line 135: the nonstop is over 10 hours, so business is the class, subject to the Contract "
-                      "Manager's prior agreement, which the signed pre-approval form naming business gives. A cheaper "
-                      "business fare on a connection is not allowed: each of its flights is 10 hours or less (lines "
-                      "132-134). The lowest logical business fare (line 119).")
+                      "Manager's prior agreement, which the signed pre-approval form naming business gives. The lowest "
+                      "logical business fare (line 119).")
     if form.cabin != Cabin.ECONOMY:
         raise ValueError("a pre-approval naming another cabin is not modelled")
     return answer(Decision.FLAG_FOR_APPROVAL, qualifying, [ReasonCode.APPROVAL_REQUIRED,
